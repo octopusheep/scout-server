@@ -31,7 +31,7 @@ var rent = [
         renter: '全文奇',
         rentpurpose: '部署CPS 2.11.0 rc-03环境',
         renttime: '2020年7月30日',
-        rentlist: ['192.168.130.2', '192.168.131.3']
+        rentlist: ['192.168.130.2', '192.168.130.3']
     },
     {
         renter: '许照康',
