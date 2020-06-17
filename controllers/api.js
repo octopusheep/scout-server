@@ -913,6 +913,19 @@ var get_overview = async (ctx, next) => {
     ctx.response.body = final;
 }
 
+var get_backup = async (ctx, next) => {
+
+    var backup_list=[];
+
+    backup_list.push(group);
+    backup_list.push(node);
+    backup_list.push(rent);
+    // 设置Content-Type:
+    ctx.response.type = 'application/json';
+    // 设置Response Body:
+    ctx.response.body = backup_list;
+}
+
 var delete_group = async (ctx, next) => {
 
     // await next();
@@ -1058,6 +1071,24 @@ var add_rent = async (ctx, next) => {
     ctx.response.body = 'add node success';
 };
 
+var restore = async (ctx, next) => {
+    // await next();
+    var restore_group = ctx.request.body.group || '';
+    var restore_node = ctx.request.body.node || '';
+    var restore_rent = ctx.request.body.rent || '';
+
+    console.log(`restore_group:`+restore_group);
+    console.log(`restore_node:`+restore_node);
+    console.log(`restore_rent:`+restore_rent);
+
+    group=restore_group;
+    node=restore_node;
+    rent=restore_rent;
+
+    ctx.response.type = 'text/html';
+    ctx.response.body = 'restore success';
+};
+
 
 
 module.exports = {
@@ -1066,12 +1097,14 @@ module.exports = {
     'GET /freenode': get_free_node,
     'GET /rent': get_rent,
     'GET /overview': get_overview,
+    'GET /backup': get_backup,
     'POST /delete_group': delete_group,
     'POST /delete_node': delete_node,
     'POST /delete_rent': delete_rent,
     'POST /add_group': add_group,
     'POST /add_node': add_node,
     'POST /add_rent': add_rent,
+    'POST /restore': restore,
 }
 
 
