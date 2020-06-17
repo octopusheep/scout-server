@@ -526,13 +526,6 @@ var node = [
         nodedeadline: '',
     },
     {
-        nodeip: '192.168.133.',
-        nodegroup: '192.168.133网段',
-        nodepurpose: '',
-        noderenter: '',
-        nodedeadline: '',
-    },
-    {
         nodeip: '192.168.133.14',
         nodegroup: '192.168.133网段',
         nodepurpose: '',
